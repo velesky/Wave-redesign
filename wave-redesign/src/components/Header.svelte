@@ -37,7 +37,7 @@
 
 		<!-- Navigation Desktop -->
 		<nav class="hidden md:flex items-center gap-8">
-			{#each liensNavigation as lien}
+			{#each liensNavigation as lien (lien.fr)}
 				<a 
 					href={lien.href} 
 					class="text-text-primary dark:text-surface font-medium hover:text-cta transition-colors duration-200"
@@ -84,7 +84,7 @@
 				class="absolute top-full left-0 w-full bg-surface border-b border-border md:hidden shadow-xl"
 			>
 				<nav class="flex flex-col p-6 gap-4">
-					{#each liensNavigation as lien}
+					{#each liensNavigation as lien (lien.fr)}
 						<a 
 							href={lien.href} 
 							class="text-xl font-medium text-text-primary border-b border-border/50 pb-2"

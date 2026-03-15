@@ -1,9 +1,8 @@
 <script lang="ts">
 	import Container from './Container.svelte';
 	import { langue } from '$lib/stores/etat_global';
-	import { motion } from 'framer-motion';
 
-	let sectionOuverte = $state(null);
+	let sectionOuverte: string | null = $state(null);
 
 	const basculerSection = (section: string) => {
 		sectionOuverte = sectionOuverte === section ? null : section;
@@ -65,7 +64,7 @@
 			</div>
 
 			<!-- Sections Footer -->
-			{#each sections as section}
+			{#each sections as section (section.titre)}
 				<div class="border-b border-surface/10 md:border-b-0 pb-4 md:pb-0">
 					<!-- Titre Section Mobile Accordion -->
 					<button 
@@ -80,7 +79,7 @@
 
 					<!-- Liens Section -->
 					<ul class="flex flex-col gap-3 mt-4 md:mt-0 overflow-hidden transition-all duration-300 {sectionOuverte === section.titre || 'hidden md:flex' ? 'max-h-60' : 'max-h-0'}">
-						{#each section.liens as lien}
+						{#each section.liens as lien (lien.fr)}
 							<li>
 								<a href={lien.href} class="text-surface/60 hover:text-surface transition-colors">
 									{$langue === 'fr' ? lien.fr : lien.en}
