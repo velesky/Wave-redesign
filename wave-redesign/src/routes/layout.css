@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #0e0d5d;
+  --color-accent: #d85f1d;
+  --color-cta: #007bff;
+  --color-background: #f8f8f8;
+  --color-surface: #ffffff;
+  --color-text-primary: #212529;
+  --color-text-secondary: #6c757d;
+
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-gt-walsheim: "GT Walsheim Bold", sans-serif;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  --radius-default: 8px;
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root {
+  --couleur-primaire: var(--color-primary);
+  --couleur-accent: var(--color-accent);
+  --couleur-cta: var(--color-cta);
+  --couleur-fond: var(--color-background);
+  --couleur-surface: var(--color-surface);
+  --couleur-texte-primaire: var(--color-text-primary);
+  --couleur-texte-secondaire: var(--color-text-secondary);
+}
+
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte-primaire);
+  font-family: var(--font-inter);
+}
